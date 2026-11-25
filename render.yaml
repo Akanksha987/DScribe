@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dscribe-patient-admission
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dscribe-patient-db
+          property: connectionString
+
+databases:
+  - name: dscribe-patient-db
+    plan: free
+    region: singapore
+    databaseName: dscribe
+    user: dscribe

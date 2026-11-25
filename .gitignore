@@ -1,0 +1,7 @@
+node_modules/
+dist/
+server/__pycache__/
+server/patients.db
+server/*.sqlite
+task-page-*.png
+.env
